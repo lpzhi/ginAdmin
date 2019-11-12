@@ -1,10 +1,10 @@
 package v1
 
 import (
-	"ginblog/models"
-	"ginblog/pkg/e"
-	"ginblog/pkg/setting"
-	"ginblog/pkg/util"
+	"ginAdmin/models"
+	"ginAdmin/pkg/e"
+	"ginAdmin/pkg/setting"
+	"ginAdmin/pkg/util"
 	"github.com/Unknwon/com"
 	"github.com/astaxie/beego/validation"
 	"github.com/gin-gonic/gin"

@@ -1,8 +1,9 @@
 package routers
 
 import (
-	"ginblog/pkg/setting"
-	"ginblog/routers/api/v1"
+	"ginAdmin/pkg/setting"
+	"ginAdmin/routers/api"
+	"ginAdmin/routers/api/v1"
 	"github.com/gin-gonic/gin"
 )
 
@@ -13,6 +14,8 @@ func InitRouter() *gin.Engine  {
 	r.Use(gin.Recovery())
 
 	gin.SetMode(setting.ServerSetting.RunMode)
+
+    r.GET("/auth",api.GetAuth)
 
 	apiv1 :=r.Group("/api/v1")
 	{

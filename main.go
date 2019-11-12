@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-	"ginblog/pkg/e"
-	"ginblog/pkg/setting"
-	"ginblog/routers"
+	"ginAdmin/pkg/e"
+	"ginAdmin/pkg/setting"
+	"ginAdmin/routers"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )

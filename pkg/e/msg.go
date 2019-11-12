@@ -10,6 +10,19 @@ var MsgFlags = map[int]string{
 	ERROR_NOT_EXIST_TAG:"该文章标签不存在",
 	ERROR_NOT_EXIST_ARTICLE:"该文章不存在",
 
-	ERROR_AUIH_CHECK_TOKE_FAIL:"",
 
+	ERROR_AUIH_CHECK_TOKE_FAIL : "Token鉴权失败",
+	ERROR_AUTH_CHECK_TOKE_TIMEOUT : "Token已超时",
+	ERROR_AUIH_TOKEN : "Token生成失败",
+	ERROR_AUTH : "Token错误",
+
+}
+
+func GetMsg(code int) string {
+
+	if msg,ok := MsgFlags[code];ok {
+		return msg
+	}
+
+	return  MsgFlags[ERROR]
 }

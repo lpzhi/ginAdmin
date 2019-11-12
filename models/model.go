@@ -2,10 +2,10 @@ package models
 
 import (
 	"fmt"
-	"ginblog/pkg/setting"
+	"ginAdmin/pkg/setting"
 	"github.com/jinzhu/gorm"
+	_ "github.com/jinzhu/gorm/dialects/mysql"
 	"log"
-	_"github.com/jinzhu/gorm/dialects/mysql"
 )
 
 

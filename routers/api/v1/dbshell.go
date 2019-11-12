@@ -1,8 +1,8 @@
 package v1
 
 import (
-	"ginblog/models"
-	"ginblog/pkg/e"
+	"ginAdmin/models"
+	"ginAdmin/pkg/e"
 	"github.com/astaxie/beego/validation"
 	"github.com/gin-gonic/gin"
 )
