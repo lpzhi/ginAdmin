@@ -18,10 +18,12 @@ type Model struct {
 }
 
 func init()  {
+
 	var(
 		err error
 		dbType, dbName, user, password, host, tablePrefix string
 	)
+	fmt.Println(setting.AppSetting)
 	sec, err := setting.Cfg.GetSection("database")
 	if err!=nil{
 		log.Fatal(2,"fail to get section 'database':%v",err)

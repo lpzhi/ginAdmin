@@ -1,6 +1,7 @@
 package setting
 
 import (
+	"ginAdmin/pkg/util/file"
 	"log"
 	"time"
 
@@ -15,6 +16,7 @@ type App struct {
 	ExportSavePath string
 	PrefixUrl string
 	RuntimeRootPath string
+	AppCOnfigPath string
 }
 
 
@@ -46,10 +48,11 @@ type Server struct {
 var ServerSetting = &Server{}
 
 func init() {
-	var err error
 
+	appConfigPath := _file.GetCurrentDirectory()+"/conf/app.ini"
+	var err error
 	//Cfg, err = ini.Load("C:\\Users\\Administrator\\go\\src\\ginblog\\conf\\app.ini")
-	Cfg, err = ini.Load("E:\\go-project\\src\\ginAdmin\\conf\\app.ini")
+	Cfg, err = ini.Load(appConfigPath)
 	if err != nil {
 		log.Fatalf("Fail to parse 'conf/app.ini': %v", err)
 	}
