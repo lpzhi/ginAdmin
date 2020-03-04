@@ -6,8 +6,17 @@ import (
 	"ginAdmin/pkg/setting"
 	"ginAdmin/routers"
 	"github.com/gin-gonic/gin"
+
 	"net/http"
 )
+
+
+// @host localhost:8090
+// @securityDefinitions.basic BasicAuth
+
+// @securityDefinitions.apikey ApiKeyAuth
+// @in header
+// @name Authorization
 
 func main()  {
 

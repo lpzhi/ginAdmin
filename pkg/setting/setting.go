@@ -46,13 +46,14 @@ type Server struct {
 }
 
 var ServerSetting = &Server{}
+var AppConfigPath string
 
 func init() {
 
-	appConfigPath := _file.GetCurrentDirectory()+"/conf/app.ini"
+	AppConfigPath = _file.GetCurrentDirectory()+"/conf/"
 	var err error
 	//Cfg, err = ini.Load("C:\\Users\\Administrator\\go\\src\\ginblog\\conf\\app.ini")
-	Cfg, err = ini.Load(appConfigPath)
+	Cfg, err = ini.Load(AppConfigPath+"app.ini")
 	if err != nil {
 		log.Fatalf("Fail to parse 'conf/app.ini': %v", err)
 	}

@@ -15,3 +15,4 @@ func CheckAuth(username,password string) bool {
 
 	return false
 }
+

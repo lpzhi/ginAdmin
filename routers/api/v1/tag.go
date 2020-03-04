@@ -1,7 +1,9 @@
 package v1
 
 import (
+	"fmt"
 	"ginAdmin/models"
+	"ginAdmin/pkg/app"
 	"ginAdmin/pkg/e"
 	"ginAdmin/pkg/setting"
 	"ginAdmin/pkg/util"
@@ -11,7 +13,16 @@ import (
 	"net/http"
 )
 
+
+// @Summary Get multiple article tags
+// @Produce  json
+// @Param name query string false "Name"
+// @Param state query int false "State"
+// @Success 200 {object} app.Response
+// @Failure 500 {object} app.Response
+// @Router /api/v1/tags [get]
 func GetTags(c *gin.Context)  {
+	appG := app.Gin{C: c}
 	name := c.Query("name")
 
 	maps := make(map[string]interface{})
@@ -20,7 +31,7 @@ func GetTags(c *gin.Context)  {
 	if name !="" {
 		maps["name"] = name
 	}
-
+	fmt.Println(maps)
 	if arg := c.Query("state");arg!="" {
 		maps["state"] = com.StrTo(arg).MustInt()
 	}
@@ -28,11 +39,14 @@ func GetTags(c *gin.Context)  {
 	data["lists"] = models.GetTags(	util.GetPage(c), setting.AppSetting.PageSize, maps)
 	data["total"] = models.GetTagTotal()
 
-	c.JSON(http.StatusOK,gin.H{
-		"code":e.SUCCESS,
-		"data":data,
-	})
+	//c.JSON(http.StatusOK,gin.H{
+	//	"code":e.SUCCESS,
+	//	"data":data,
+	//})
+
+	appG.Response(http.StatusOK, e.SUCCESS, data)
 }
+
 
 
 func AddTag(c *gin.Context)  {

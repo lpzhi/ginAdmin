@@ -61,6 +61,9 @@ func init()  {
 	db.DB().SetMaxIdleConns(10)
 	db.DB().SetMaxOpenConns(100)
 
+	//初始化权限
+	initCasbinEnforcer()
+
 }
 
 func CloseDB() {
